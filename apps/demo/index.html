@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GreenRoom Demo</title>
+    <link rel="stylesheet" href="/packages/greenroom/dist/tokens.css" />
+    <style>
+      html,
+      body {
+        height: 100%;
+        background: var(--gr-surface);
+        color: var(--gr-text);
+        margin: 0;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
+      }
+      .page {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(12, 1fr);
+        padding: 16px;
+      }
+      .col-4 {
+        grid-column: span 4;
+      }
+      .col-6 {
+        grid-column: span 6;
+      }
+      .col-12 {
+        grid-column: span 12;
+      }
+      a {
+        color: var(--gr-accent);
+      }
+    </style>
+    <script type="module">
+      import "/packages/greenroom/dist/index.js";
+    </script>
+  </head>
+  <body>
+    <div class="page">
+      <div class="col-12">
+        <gr-card>
+          <span slot="header">GreenRoom</span>
+          <div class="gr-row">
+            <strong class="gr-accent">Terminal-first UI</strong>
+            <span class="gr-muted"
+              >ANSI-inspired palettes. Compact components. Dark/light
+              adaptable.</span
+            >
+          </div>
+        </gr-card>
+      </div>
+
+      <div class="col-6">
+        <gr-card>
+          <span slot="header">List</span>
+          <gr-list density="compact">
+            <li>
+              <span class="bullet"></span><span class="text">CPU</span
+              ><span class="gr-muted">amd64</span>
+            </li>
+            <li>
+              <span class="bullet"></span><span class="text">Region</span
+              ><span class="gr-muted">us-east-1</span>
+            </li>
+            <li>
+              <span class="bullet"></span><span class="text">Nodes</span
+              ><span class="gr-muted">12</span>
+            </li>
+          </gr-list>
+        </gr-card>
+      </div>
+
+      <div class="col-6">
+        <gr-card>
+          <span slot="header">Gauge</span>
+          <gr-gauge value="64">Load</gr-gauge>
+        </gr-card>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+:root {
+  /* ANSI-inspired palette */
+  --gr-bg: #0b0f0c; /* terminal black-ish */
+  --gr-bg-alt: #0f1411;
+  --gr-fg: #d7e3dc; /* light foreground */
+  --gr-fg-dim: #9fb3a7;
+
+  /* ANSI 8 basic */
+  --gr-black: #1b2220;
+  --gr-red: #e26262;
+  --gr-green: #79d18c;
+  --gr-yellow: #f0d56b;
+  --gr-blue: #6aa0ff;
+  --gr-magenta: #c08bff;
+  --gr-cyan: #53d6d1;
+  --gr-white: #e6efe9;
+
+  /* ANSI bright */
+  --gr-bright-black: #2a322f;
+  --gr-bright-red: #ff7c7c;
+  --gr-bright-green: #9cf3a9;
+  --gr-bright-yellow: #ffe27a;
+  --gr-bright-blue: #8db8ff;
+  --gr-bright-magenta: #d8a8ff;
+  --gr-bright-cyan: #6ef2ed;
+  --gr-bright-white: #f5fff9;
+
+  /* component radii/spacing */
+  --gr-radius: 6px;
+  --gr-gap-1: 4px;
+  --gr-gap-2: 8px;
+  --gr-gap-3: 12px;
+  --gr-gap-4: 16px;
+
+  /* light mode mapping */
+  color-scheme: dark light;
+}
+
+/* Dark theme (default) */
+:root {
+  --gr-surface: var(--gr-bg);
+  --gr-surface-alt: var(--gr-bg-alt);
+  --gr-text: var(--gr-fg);
+  --gr-text-dim: var(--gr-fg-dim);
+  --gr-border: var(--gr-bright-black);
+  --gr-accent: var(--gr-green);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --gr-surface: #f5fff9;
+    --gr-surface-alt: #edf6f1;
+    --gr-text: #0f1411;
+    --gr-text-dim: #2a322f;
+    --gr-border: #cfe1d8;
+    --gr-accent: #1f7a4a;
+  }
+}
+
+/* Minimal utility classes */
+.gr-grid {
+  display: grid;
+  gap: var(--gr-gap-3);
+}
+.gr-row {
+  display: flex;
+  gap: var(--gr-gap-3);
+  align-items: center;
+}
+.gr-card {
+  background: var(--gr-surface);
+  color: var(--gr-text);
+  border: 1px solid var(--gr-border);
+  border-radius: var(--gr-radius);
+  padding: 12px;
+}
+.gr-muted {
+  color: var(--gr-text-dim);
+}
+.gr-accent {
+  color: var(--gr-accent);
+}
